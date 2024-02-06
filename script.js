@@ -13,4 +13,14 @@ function getComputerChoice() {
 
 const computerChoice = getComputerChoice();
 
-console.log(computerChoice);
+function formatPlayerChoice() {
+    const lowerCaseInput = prompt("Type rock, paper, or scissors").toLowerCase();
+
+    const formattedInput = lowerCaseInput.charAt(0).toUpperCase() + lowerCaseInput.slice(1);
+
+    return formattedInput;
+}
+
+const playerChoice = formatPlayerChoice();
+
+console.log(playerChoice, computerChoice);
