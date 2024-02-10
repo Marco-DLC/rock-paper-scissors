@@ -13,6 +13,7 @@ function getComputerChoice() {
 
 const computerChoice = getComputerChoice();
 
+// This gets AND formats the player's output
 function formatPlayerChoice() {
     const lowerCaseInput = prompt("Type rock, paper, or scissors").toLowerCase();
 
@@ -23,4 +24,26 @@ function formatPlayerChoice() {
 
 const playerChoice = formatPlayerChoice();
 
-console.log(playerChoice, computerChoice);
+console.log('You chose: ' + playerChoice);
+console.log('COM chose: ' + computerChoice);
+
+function playRound(playerChoice, computerChoice) {
+
+    if (playerChoice === computerChoice) {
+        return "It's a tie!"
+    }
+
+    if (playerChoice === 'Rock' && computerChoice === 'Scissors' ||
+    playerChoice === 'Paper' && computerChoice === 'Rock' ||
+    playerChoice === 'Scissors' && computerChoice === 'Paper') {
+        return "You're a winner!"
+    }
+
+    else {
+        return "You lose..."
+    }
+}
+
+const roundResult = playRound(playerChoice,computerChoice);
+
+console.log(roundResult);
