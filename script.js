@@ -11,8 +11,6 @@ function getComputerChoice() {
     }
 }
 
-const computerChoice = getComputerChoice();
-
 // This gets AND formats the player's output
 function formatPlayerChoice() {
     const lowerCaseInput = prompt("Type rock, paper, or scissors").toLowerCase();
@@ -21,11 +19,6 @@ function formatPlayerChoice() {
 
     return formattedInput;
 }
-
-const playerChoice = formatPlayerChoice();
-
-console.log('You chose: ' + playerChoice);
-console.log('COM chose: ' + computerChoice);
 
 function playRound(playerChoice, computerChoice) {
 
@@ -44,6 +37,32 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-const roundResult = playRound(playerChoice,computerChoice);
+function playGame(){
+    let playerWins = 0;
+    let computerWins = 0;
 
-console.log(roundResult);
+    for (let i = 0; i < 5; i++) {
+        const computerChoice = getComputerChoice();
+        const playerChoice = formatPlayerChoice();
+        
+        console.log('Round ' + (i + 1) + ':');
+        console.log('You chose: ' + playerChoice);
+        console.log('COM chose: ' + computerChoice);
+
+        const roundResult = playRound(playerChoice, computerChoice);
+        console.log(roundResult);
+
+        if (roundResult === 'You\'re a winner!') {
+            playerWins++;
+        } else if (roundResult === 'You lose...') {
+            computerWins++;
+        }
+        console.log('~~~~~~~~~~~~~');
+    }
+
+    console.log('Final Results:');
+    console.log('Player: ' + playerWins);
+    console.log('Computer: ' + computerWins);
+}
+
+playGame();
