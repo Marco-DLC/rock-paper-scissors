@@ -63,6 +63,18 @@ function playGame(){
     console.log('Final Results:');
     console.log('Player: ' + playerWins);
     console.log('Computer: ' + computerWins);
+    console.log('~~~~~~~~~~~~~')
+
+    if (playerWins > computerWins) {
+        console.log('Wow! You\'re number one! Wahoo!');
+    } else if (playerWins < computerWins) {
+        console.log('LOL, you suck! Better luck next time.');
+    } else {
+        console.log('Umm you...tied somehow? You know how rare that is, right?');
+    }
+
+    console.log('~~~~~~~~~~~~~')
+    console.log('Reload the page to go again!')
 }
 
 playGame();
